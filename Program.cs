@@ -154,13 +154,48 @@ namespace Functions
         //5. Grading System
         static void GradingSystem()
         {
+            Console.Write("Enter student score: ");
+            int score = int.Parse(Console.ReadLine());
+            char grade;
+
+            if (score >= 90)
+                grade = 'A';
+            else if (score >= 80)
+                grade = 'B';
+            else if (score >= 70)
+                grade = 'C';
+            else if (score >= 60)
+                grade = 'D';
+            else
+                grade = 'F';
+
+
+
+
+
+
+            Console.WriteLine("The student's grade is: " + grade);
+            Console.WriteLine(" ");
 
         }
 
         //6. Swap Two Numbers
         static void SwapTwoNumbers()
         {
+            Console.Write("Enter first number: ");
+            int a = int.Parse(Console.ReadLine());
 
+            Console.Write("Enter second number: ");
+            int b = int.Parse(Console.ReadLine());
+
+            int c;
+
+            c = a;
+            a = b;
+            b = c;
+
+            Console.WriteLine("After swapping: First Number = " + a + ", Second Number = " + b);
+            Console.WriteLine(" ");
         }
 
         //7. Days to Weeks and Days Converter
