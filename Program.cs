@@ -201,13 +201,56 @@ namespace Functions
         //7. Days to Weeks and Days Converter
         static void DaysToWeeksAndDaysConverter()
         {
+            Console.Write("Enter number of days: ");
+            int days = int.Parse(Console.ReadLine());
+
+            int weeks = days / 7;
+            int remainingDays = days % 7;
+
+            Console.WriteLine(days + " days = " + weeks + " week(s) and " + remainingDays + " day(s)");
+            Console.WriteLine(" ");
 
         }
 
         //8.  Electricity Bill Calculator
         static void ElectricityBillCalculator()
         {
+            Console.Write("Enter first number: ");
+            double FirstNumber = double.Parse(Console.ReadLine());
 
+            Console.Write("Enter operator (+, -, *, /): ");
+            char op = Console.ReadKey().KeyChar;
+            Console.WriteLine();
+
+            Console.Write("Enter second number: ");
+            double SecondNumber = double.Parse(Console.ReadLine());
+
+            double result = 0;
+
+            if (op == '+')
+                result = FirstNumber + SecondNumber;
+            else if (op == '-')
+                result = FirstNumber - SecondNumber;
+            else if (op == '*')
+                result = FirstNumber * SecondNumber;
+            else if (op == '/')
+            {
+                if (SecondNumber != 0)
+                    result = FirstNumber / SecondNumber;
+                else
+                {
+                    Console.WriteLine("Cannot divide by zero!");
+                    return;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid operator!");
+                return;
+            }
+
+            Console.WriteLine("Result: " + result);
+            Console.WriteLine(" ");
         }
 
         //9. Simple Calculator
