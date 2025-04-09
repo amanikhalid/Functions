@@ -215,6 +215,30 @@ namespace Functions
         //8.  Electricity Bill Calculator
         static void ElectricityBillCalculator()
         {
+            float unitNumber, bill;
+            Console.WriteLine("Enter number of units : ");
+            unitNumber = float.Parse(Console.ReadLine());
+            if (unitNumber <= 100)
+            {
+                bill = unitNumber * 0.5f;
+                Console.WriteLine("The bill is : " + bill);
+            }
+            else if (unitNumber > 100 && unitNumber <= 300)
+            {
+                bill = unitNumber * 0.75f;
+                Console.WriteLine("The bill is : " + bill);
+            }
+            else
+            {
+                bill = unitNumber * 1.0f;
+                Console.WriteLine("The bill is : " + bill);
+            }
+
+           
+        }
+        //9. Simple Calculator
+        static void SimpleCalculator()
+        {
             Console.Write("Enter first number: ");
             double FirstNumber = double.Parse(Console.ReadLine());
 
@@ -252,13 +276,6 @@ namespace Functions
             Console.WriteLine("Result: " + result);
             Console.WriteLine(" ");
         }
-
-        //9. Simple Calculator
-        static void SimpleCalculator()
-        {
-
-        }
     }
-
 }
 
