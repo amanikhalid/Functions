@@ -110,18 +110,45 @@ namespace Functions
 
             }
 
+            Console.WriteLine(" ");
         }
 
         //3. Temperature Converter
         static void TemperatureConverter()
         {
+            Console.Write("Enter temperature in Celsius: ");
+            double celsius = double.Parse(Console.ReadLine());
+
+            double fahrenheit = (celsius * 9 / 5) + 32;
+
+            Console.WriteLine("Temperature in Fahrenheit: " + fahrenheit);
+            Console.WriteLine(" ");
 
         }
 
         //4. Simple Discount Calculator
         static void SimpleDiscountCalculator()
         {
+            Console.Write("Enter the price of the item: ");
+            double price = double.Parse(Console.ReadLine());
+            double discount = 0;
 
+            double finalPrice;
+
+            if (price >100)
+            {
+                discount = (price / 100) * 10;
+                finalPrice = price - discount;
+                Console.WriteLine("Final price is:" + finalPrice);
+
+            }
+            else
+            {
+                Console.WriteLine("Final price is:" + price);
+
+            }
+
+            Console.WriteLine(" ");
         }
 
         //5. Grading System
