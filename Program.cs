@@ -35,7 +35,17 @@ namespace Functions
                     choice = int.Parse(Console.ReadLine());
                     switch (choice)
                     {
-                        case 1: EvenOdd(); break;
+                        case 1:
+
+
+                            Console.Write("Enter a number: ");
+                            int num = int.Parse(Console.ReadLine());
+                            string result = EvenOdd(num);
+                            printValue(result);
+
+                            
+                            
+                            break;
                         case 2: LargestOfThreeNumbers(); break;
                         case 3: TemperatureConverter(); break;
                         case 4: SimpleDiscountCalculator(); break;
@@ -65,16 +75,24 @@ namespace Functions
 
             }
         }
-        // 1. Even or Odd Check
-        static void EvenOdd()
+
+        // function print 
+
+        public static void printValue(string input)
         {
-            Console.Write("Enter a number: ");
-            int num = int.Parse(Console.ReadLine());
+            Console.WriteLine(" The result of this operation is : "+ input);
+        }
+
+
+        // 1. Even or Odd Check
+        public static string EvenOdd(int num)
+        {
+           
 
             if (num % 2 == 0)
-                Console.WriteLine("The number is Even.");
+                return "The number is Even.";
             else
-                Console.WriteLine("The number is Odd.");
+                return "The number is Odd.";
 
 
             Console.WriteLine(" ");
