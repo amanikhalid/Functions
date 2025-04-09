@@ -68,12 +68,47 @@ namespace Functions
         // 1. Even or Odd Check
         static void EvenOdd()
         {
+            Console.Write("Enter a number: ");
+            int num = int.Parse(Console.ReadLine());
 
+            if (num % 2 == 0)
+                Console.WriteLine("The number is Even.");
+            else
+                Console.WriteLine("The number is Odd.");
+
+
+            Console.WriteLine(" ");
         }
 
         //2. Largest of Three Numbers
         static void LargestOfThreeNumbers()
         {
+            Console.Write("Enter first number: ");
+            int num1 = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter second number: ");
+            int num2 = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter third number: ");
+            int num3 = int.Parse(Console.ReadLine());
+
+            int largest = num1;
+
+            if (largest > num2)
+            {
+                if (largest > num3)
+                    Console.WriteLine("The largest number is:"+largest);
+            }
+            else
+            {
+                largest = num2;
+
+                if (largest > num3)
+                    Console.WriteLine("The largest number is:" + largest);
+                else
+                    Console.WriteLine("The largest number is:" + num3);
+
+            }
 
         }
 
