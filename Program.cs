@@ -46,7 +46,19 @@ namespace Functions
                             
                             
                             break;
-                        case 2: LargestOfThreeNumbers(); break;
+                        case 2:
+                            Console.Write("Enter first number: ");
+                            int num1 = int.Parse(Console.ReadLine());
+
+                            Console.Write("Enter second number: ");
+                            int num2 = int.Parse(Console.ReadLine());
+
+                            Console.Write("Enter third number: ");
+                            int num3 = int.Parse(Console.ReadLine());
+                            int result2 = LargestOfThreeNumbers(num1, num2, num3);
+                            printValue(result2.ToString());
+                            ; break;
+
                         case 3: TemperatureConverter(); break;
                         case 4: SimpleDiscountCalculator(); break;
                         case 5: GradingSystem(); break;
@@ -99,36 +111,19 @@ namespace Functions
         }
 
         //2. Largest of Three Numbers
-        static void LargestOfThreeNumbers()
+       public static int LargestOfThreeNumbers(int num1, int num2, int num3)
         {
-            Console.Write("Enter first number: ");
-            int num1 = int.Parse(Console.ReadLine());
-
-            Console.Write("Enter second number: ");
-            int num2 = int.Parse(Console.ReadLine());
-
-            Console.Write("Enter third number: ");
-            int num3 = int.Parse(Console.ReadLine());
-
+           
             int largest = num1;
 
-            if (largest > num2)
-            {
-                if (largest > num3)
-                    Console.WriteLine("The largest number is:"+largest);
-            }
-            else
-            {
-                largest = num2;
+            if (num2 > largest)
+            largest = num2;
+            if (num3 > largest)
+                largest = num3;
 
-                if (largest > num3)
-                    Console.WriteLine("The largest number is:" + largest);
-                else
-                    Console.WriteLine("The largest number is:" + num3);
-
-            }
-
-            Console.WriteLine(" ");
+            
+                    return largest;
+           
         }
 
         //3. Temperature Converter
