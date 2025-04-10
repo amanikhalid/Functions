@@ -59,7 +59,13 @@ namespace Functions
                             printValue(result2.ToString());
                             ; break;
 
-                        case 3: TemperatureConverter(); break;
+                        case 3:
+                            Console.Write("Enter temperature in Celsius: ");
+                            double celsius = double.Parse(Console.ReadLine()); ; break;
+                            double result3 = TemperatureConverter(celsius);
+                            printValue(result3.ToString());
+
+
                         case 4: SimpleDiscountCalculator(); break;
                         case 5: GradingSystem(); break;
                         case 6: SwapTwoNumbers(); break;
@@ -127,15 +133,13 @@ namespace Functions
         }
 
         //3. Temperature Converter
-        static void TemperatureConverter()
+       public static double TemperatureConverter(double celsius)
         {
-            Console.Write("Enter temperature in Celsius: ");
-            double celsius = double.Parse(Console.ReadLine());
+           
 
-            double fahrenheit = (celsius * 9 / 5) + 32;
+            return (celsius * 9 / 5) + 32;
 
-            Console.WriteLine("Temperature in Fahrenheit: " + fahrenheit);
-            Console.WriteLine(" ");
+           
 
         }
 
