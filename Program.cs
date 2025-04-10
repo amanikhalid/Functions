@@ -80,7 +80,16 @@ namespace Functions
                             printValue(grade.ToString());
                             break;
 
-                        case 6: SwapTwoNumbers(); break;
+                        case 6:
+                            Console.Write("Enter first number: ");
+                            int a = int.Parse(Console.ReadLine());
+
+                            Console.Write("Enter second number: ");
+                            int b = int.Parse(Console.ReadLine());
+                            SwapTwoNumbers(a, b);
+                            
+                            ; break;
+
                         case 7: DaysToWeeksAndDaysConverter(); break;
                         case 8: ElectricityBillCalculator(); break;
                         case 9: SimpleCalculator(); break;
@@ -195,17 +204,13 @@ namespace Functions
         }
 
         //6. Swap Two Numbers
-        static void SwapTwoNumbers()
+       public static void SwapTwoNumbers(int a, int b)
         {
-            Console.Write("Enter first number: ");
-            int a = int.Parse(Console.ReadLine());
 
-            Console.Write("Enter second number: ");
-            int b = int.Parse(Console.ReadLine());
 
-            int c;
+            int c = a;
 
-            c = a;
+            
             a = b;
             b = c;
 
