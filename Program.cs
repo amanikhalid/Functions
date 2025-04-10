@@ -73,7 +73,13 @@ namespace Functions
                             printValue(finalPrice.ToString());
 
                             ; break;
-                        case 5: GradingSystem(); break;
+                        case 5:
+                            Console.Write("Enter student score: ");
+                            int score = int.Parse(Console.ReadLine());
+                            char grade = GradingSystem(score);
+                            printValue(grade.ToString());
+                            break;
+
                         case 6: SwapTwoNumbers(); break;
                         case 7: DaysToWeeksAndDaysConverter(); break;
                         case 8: ElectricityBillCalculator(); break;
@@ -168,10 +174,9 @@ namespace Functions
         }
 
         //5. Grading System
-        static void GradingSystem()
+        public static char GradingSystem(int score)
         {
-            Console.Write("Enter student score: ");
-            int score = int.Parse(Console.ReadLine());
+           
             char grade;
 
             if (score >= 90)
@@ -185,13 +190,7 @@ namespace Functions
             else
                 grade = 'F';
 
-
-
-
-
-
-            Console.WriteLine("The student's grade is: " + grade);
-            Console.WriteLine(" ");
+            return grade;
 
         }
 
