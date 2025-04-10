@@ -66,7 +66,13 @@ namespace Functions
                             printValue(result3.ToString());
 
 
-                        case 4: SimpleDiscountCalculator(); break;
+                        case 4:
+                            Console.Write("Enter the price of the item: ");
+                            double price = double.Parse(Console.ReadLine());
+                            double finalPrice = SimpleDiscountCalculator(price);
+                            printValue(finalPrice.ToString());
+
+                            ; break;
                         case 5: GradingSystem(); break;
                         case 6: SwapTwoNumbers(); break;
                         case 7: DaysToWeeksAndDaysConverter(); break;
@@ -138,34 +144,27 @@ namespace Functions
            
 
             return (celsius * 9 / 5) + 32;
-
-           
+  
 
         }
 
         //4. Simple Discount Calculator
-        static void SimpleDiscountCalculator()
+        public static double SimpleDiscountCalculator(double price)
         {
-            Console.Write("Enter the price of the item: ");
-            double price = double.Parse(Console.ReadLine());
-            double discount = 0;
 
-            double finalPrice;
+            double discount = 0;
+            
 
             if (price >100)
             {
                 discount = (price / 100) * 10;
-                finalPrice = price - discount;
-                Console.WriteLine("Final price is:" + finalPrice);
+               
 
             }
-            else
-            {
-                Console.WriteLine("Final price is:" + price);
+            double finalPrice = price - discount;
+            return finalPrice;
 
-            }
-
-            Console.WriteLine(" ");
+            
         }
 
         //5. Grading System
