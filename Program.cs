@@ -86,11 +86,18 @@ namespace Functions
 
                             Console.Write("Enter second number: ");
                             int b = int.Parse(Console.ReadLine());
-                            SwapTwoNumbers(a, b);
-                            
+                            (int newA, int newB) = SwapTwoNumbers(a, b);
+                            printValue("First Number = " + newA + ", Second Number = " + newB);
+
                             ; break;
 
-                        case 7: DaysToWeeksAndDaysConverter(); break;
+                        case 7:
+                            Console.Write("Enter number of days: ");
+                            int days = int.Parse(Console.ReadLine());
+                            string result5=DaysToWeeksAndDaysConverter(days);
+                            printValue(result5);
+                            ; break;
+
                         case 8: ElectricityBillCalculator(); break;
                         case 9: SimpleCalculator(); break;
                         case 10: return;
@@ -204,7 +211,7 @@ namespace Functions
         }
 
         //6. Swap Two Numbers
-       public static void SwapTwoNumbers(int a, int b)
+       public static (int,int) SwapTwoNumbers(int a, int b)
         {
 
 
@@ -214,21 +221,18 @@ namespace Functions
             a = b;
             b = c;
 
-            Console.WriteLine("After swapping: First Number = " + a + ", Second Number = " + b);
-            Console.WriteLine(" ");
+            return (b, a);
         }
 
         //7. Days to Weeks and Days Converter
-        static void DaysToWeeksAndDaysConverter()
+       public static string DaysToWeeksAndDaysConverter(int days)
         {
-            Console.Write("Enter number of days: ");
-            int days = int.Parse(Console.ReadLine());
-
+            
             int weeks = days / 7;
             int remainingDays = days % 7;
 
-            Console.WriteLine(days + " days = " + weeks + " week(s) and " + remainingDays + " day(s)");
-            Console.WriteLine(" ");
+            return days + " days = " + weeks + " week(s) and " + remainingDays + " day(s)";
+           
 
         }
 
